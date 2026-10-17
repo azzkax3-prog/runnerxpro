@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>PESAT RUNNER 3D</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="gameContainer">
+      <div id="hud" class="hidden">
+        <div class="hud-block">
+          <span class="label">SCORE</span>
+          <span id="scoreValue">0000</span>
+        </div>
+        <div class="hud-block">
+          <span class="label">COINS</span>
+          <span id="coinValue">00</span>
+        </div>
+        <div class="hud-block">
+          <span class="label">SPEED</span>
+          <span id="speedValue">1.0x</span>
+        </div>
+      </div>
+
+      <div id="menuOverlay" class="overlay visible">
+        <div class="panel">
+          <h1>PESAT RUNNER 3D</h1>
+          <p class="subtitle">Run • Dodge • Collect</p>
+          <button id="playButton" class="primary">PLAY GAME</button>
+          <button id="howButton" class="secondary">HOW TO PLAY</button>
+          <div class="info-grid">
+            <div><span class="small-label">Controls</span><br />A / D or ← / →</div>
+            <div><span class="small-label">Jump</span><br />W / ↑ / Space</div>
+          </div>
+          <div class="high-score-box">
+            <span>High score</span>
+            <strong id="menuHighScore">0000</strong>
+          </div>
+        </div>
+      </div>
+
+      <div id="howOverlay" class="overlay hidden">
+        <div class="panel small-panel">
+          <h2>How to Play</h2>
+          <ul>
+            <li>Stay on one of the 3 lanes.</li>
+            <li>Jump over cones and barriers.</li>
+            <li>Avoid large crates by changing lanes.</li>
+            <li>Collect coins for extra points.</li>
+            <li>Survive as long as you can.</li>
+          </ul>
+          <button id="closeHowButton" class="primary">BACK</button>
+        </div>
+      </div>
+
+      <div id="gameOverOverlay" class="overlay hidden">
+        <div class="panel">
+          <h2>GAME OVER</h2>
+          <div class="summary-row"><span>Score</span><strong id="finalScore">0000</strong></div>
+          <div class="summary-row"><span>Coins</span><strong id="finalCoins">00</strong></div>
+          <div class="summary-row"><span>High score</span><strong id="finalHighScore">0000</strong></div>
+          <div class="button-row">
+            <button id="playAgainButton" class="primary">PLAY AGAIN</button>
+            <button id="mainMenuButton" class="secondary">MAIN MENU</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="touchControls" aria-label="Touch controls">
+        <button class="touch-button" data-action="left">Left</button>
+        <button class="touch-button" data-action="jump">Jump</button>
+        <button class="touch-button" data-action="right">Right</button>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
